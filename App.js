@@ -50,7 +50,6 @@ export default class App extends Component {
       recordSecs: 0,
     });
 
-    // RNFS.readFile('/storage/emulated/0/Android/data/com.recorderapp/files/hello.mp4','base64').then((x) => {
       console.log('FILE Read Successfully!');
       this.StorageRef.put('/storage/emulated/0/Android/data/com.recorderapp/files/hello.mp4').then((snapshot)=> {
         console.log(snapshot, 'Uploaded a blob or file!');
@@ -60,9 +59,6 @@ export default class App extends Component {
           });
 
       });
-    // }).catch((err) => {
-    //   console.log('Error:',err.message);
-    // });
 
   }
 
@@ -90,30 +86,19 @@ export default class App extends Component {
 
   componentDidMount() {
     let audiosList= [];
-    console.log('like what the hell!!!!')
-
       this.audiosListRef.on('value', (snapshot)=> {
-        console.log(snapshot, 'snapshoooot!!')
         if(snapshot) {
           snapshot.forEach((childSnapshot)=> {
-            console.log(childSnapshot,'childSnapshot');
             let childData = childSnapshot.val();
             audiosList.push(childData);
           });
-          this.setState(() =>{audiosList});
-          console.log(audiosList, 'audiosList')
+          this.setState({audiosList});
         } else {
           console.log('list of data is not here yet!!!!')
         }
-
-
     });
-
-
   }
   render() {
-    console.log(this.state.audiosList, 'this.state in render')
-
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native Recorder!</Text>
@@ -126,9 +111,8 @@ export default class App extends Component {
           recordTime={this.state.recordTime}
           duration={this.state.duration}
            />
-        {this.state.audiosList.length !==0 ? this.state.audiosList.map((audio)=>{
-            <Text style={styles.welcome}>new Audio</Text>
-           }) : <Text style={styles.welcome}>data is not ready yet بتتجهّز لسة هعهعهععع</Text>}
+        {this.state.audiosList.length !==0 ? this.state.audiosList.map((audio, index)=>{ return <Text key={audio.timeCreated} style={styles.welcome}>new Audio #{index} {audio.download_url}</Text>
+           }) : <Text style={styles.welcome}>data is on it's way or there is no data! =D</Text>}
            
 
       </View>
