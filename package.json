@@ -1,0 +1,28 @@
+{
+  "name": "RecorderApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "firebase": "^5.9.0",
+    "react": "16.8.3",
+    "react-native": "0.59.1",
+    "react-native-audio-recorder-player": "^2.1.2",
+    "react-native-firebase": "^5.2.3",
+    "react-native-fs": "^2.13.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.0",
+    "@babel/runtime": "7.4.0",
+    "babel-jest": "24.5.0",
+    "jest": "24.5.0",
+    "metro-react-native-babel-preset": "0.53.1",
+    "react-test-renderer": "16.8.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

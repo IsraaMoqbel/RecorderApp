@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "710516920701",
+    "firebase_url": "https://awesomeapp-4bee5.firebaseio.com",
+    "project_id": "awesomeapp-4bee5",
+    "storage_bucket": "awesomeapp-4bee5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710516920701:android:bdda3018bb58ca0a",
+        "android_client_info": {
+          "package_name": "com.awesomeproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710516920701-becqj0epeeq1deci21pqtkv9he95r3b8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0XcbYi6MrSetot0QsYEWzx2aD4RuKNAE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710516920701:android:2040ba164a18e9a3",
+        "android_client_info": {
+          "package_name": "com.recorderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710516920701-becqj0epeeq1deci21pqtkv9he95r3b8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0XcbYi6MrSetot0QsYEWzx2aD4RuKNAE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
