@@ -3,6 +3,7 @@ package com.recorderapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
 import com.rnfs.RNFSPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import com.dooboolab.RNAudioRecorderPlayerPackage;
@@ -29,6 +30,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new VectorIconsPackage(),
           new RNFSPackage(),
           new RNAudioRecorderPlayerPackage(),
           new RNFirebasePackage(),

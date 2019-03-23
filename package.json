@@ -12,7 +12,8 @@
     "react-native": "0.59.1",
     "react-native-audio-recorder-player": "^2.1.2",
     "react-native-firebase": "^5.2.3",
-    "react-native-fs": "^2.13.3"
+    "react-native-fs": "^2.13.3",
+    "react-native-vector-icons": "^6.4.2"
   },
   "devDependencies": {
     "@babel/core": "7.4.0",

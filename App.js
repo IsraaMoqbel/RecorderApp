@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, FlatList} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import AudioRecorderPlayer from 'react-native-audio-recorder-player';
 import firebase from 'react-native-firebase';
 import RNFS from 'react-native-fs';
@@ -17,7 +18,9 @@ export default class App extends Component {
       playTime: '',
       duration: '',
       recordTime:'',
-      audiosList:[]
+      audiosList:[],
+      isRecording: false,
+      isPlaying:false
     }
   }
   audioRecorderPlayer = new AudioRecorderPlayer();
@@ -28,6 +31,7 @@ export default class App extends Component {
 
 
   onStartRecord = async () => {
+    // this.setState({isRecording:true});
     const path = Platform.select({
       ios: 'hello.m4a',
       android: 'storage/emulated/0/Android/data/com.recorderapp/files/hello.mp4',
@@ -44,6 +48,8 @@ export default class App extends Component {
   }
 
   onStopRecord = async () => {
+    // this.setState({isRecording:false});
+
     const result = await this.audioRecorderPlayer.stopRecorder();
     this.audioRecorderPlayer.removeRecordBackListener();
     this.setState({
@@ -63,6 +69,8 @@ export default class App extends Component {
   }
 
   onStartPlay = async () => {
+    // this.setState({isPlaying:true});
+
     console.log('onStartPlay');
     const path = Platform.select({
       ios: 'hello.m4a',
@@ -102,7 +110,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native Recorder!</Text>
-        
+        <Icon name="headphones" size={60} color="#900" />
           <AudioItem 
           onStartRecord={this.onStartRecord}
           onStopRecord={this.onStopRecord}
@@ -111,9 +119,10 @@ export default class App extends Component {
           recordTime={this.state.recordTime}
           duration={this.state.duration}
            />
-        {this.state.audiosList.length !==0 ? this.state.audiosList.map((audio, index)=>{ return <Text key={audio.timeCreated} style={styles.welcome}>new Audio #{index} {audio.download_url}</Text>
-           }) : <Text style={styles.welcome}>data is on it's way or there is no data! =D</Text>}
-           
+        <FlatList
+          data={this.state.audiosList}
+          renderItem={({item, index}) => <Text>{item.timeCreated} new Audio #{index} {item.download_url}</Text>}
+        />        
 
       </View>
     );

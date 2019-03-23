@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 export default class AudioItem extends Component {
@@ -10,18 +11,15 @@ export default class AudioItem extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button
-          onPress={()=>this.props.onStartRecord()}
-          title="Recoed"/>
+        <Icon name="microphone" size={30} color="#900"
+        onPress={()=>this.props.onStartRecord()} />
         <Text>{this.props.recordTime}</Text>
-        <Button
-          onPress={()=>this.props.onStopRecord()}
-          title="Stop"/>
+        <Icon name="stop" size={30} color="#900"
+        onPress={()=>this.props.onStopRecord()} />
         <Text>{this.props.playTime}</Text>
         <Text>{this.props.duration}</Text>
-        <Button
-          onPress={()=>this.props.onStartPlay()}
-          title="Play"/>
+        <Icon name="play" size={30} color="#900"
+        onPress={()=>this.props.onStartPlay()} />
       </View>
     );
   }
